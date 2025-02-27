@@ -4,6 +4,7 @@ import 'react-native-reanimated';
 import { useEffect } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
+import "@/global.css"
 
 // Extracted constant for font mapping
 const FONT_MAP = {
@@ -52,7 +53,7 @@ export default function RootLayout() {
             <Stack screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="+not-found" />
             </Stack>
-            <StatusBar style="auto" />
+            <StatusBar style="dark" />
         </>
     );
 }
