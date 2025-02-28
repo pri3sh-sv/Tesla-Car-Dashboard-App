@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import "@/global.css"
+import {GluestackUIProvider} from "@/components/ui/gluestack-ui-provider";
 
 // Extracted constant for font mapping
 const FONT_MAP = {
@@ -50,10 +51,12 @@ export default function RootLayout() {
     // Render the layout
     return (
         <>
-            <Stack screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="+not-found" />
-            </Stack>
-            <StatusBar style="dark" />
+            <GluestackUIProvider>
+                <Stack screenOptions={{ headerShown: false }}>
+                    <Stack.Screen name="+not-found" />
+                </Stack>
+                <StatusBar style="dark" />
+            </GluestackUIProvider>
         </>
     );
 }
