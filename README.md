@@ -1,50 +1,104 @@
-# Welcome to your Expo app 👋
+# V2X Dashboard
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to the **V2X Dashboard** repository! This project is built using **React Native** with **Expo** for mobile application development, and it leverages various libraries and tools to enhance functionality and development experience.
 
-## Get started
+## Table of Contents
 
-1. Install dependencies
+- [About](#about)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Folder Structure](#folder-structure)
+- [Available Scripts](#available-scripts)
 
+## About
+
+**V2X Dashboard** is a mobile application designed to provide real time telemetry of your car in your tablet. It uses the latest technologies in the mobile development ecosystem to deliver a robust and engaging user experience.
+
+## Features
+
+- [Feature 1] (e.g., Geolocation support)
+- [Feature 2] (e.g., Customizable toast notifications)
+- [Feature 3] (e.g., Navigation with react-navigation)
+- [Feature 4] (e.g., Splash screen configuration and transitions)
+- And more!
+
+## Tech Stack
+
+**Languages and Frameworks:**
+- **TypeScript** (v5.3.3) for type-safe development.
+- **React** (v18.3.1) and **React Native** (v0.76.7).
+
+**Libraries and Tools:**
+- UI Frameworks: `nativewind`, `@gluestack-ui`.
+- Navigation: `@react-navigation`.
+- Animations: `lottie-react-native`, `react-native-reanimated`.
+- Location Services: `expo-location`.
+- Testing: `jest`, `jest-expo`.
+- Utilities: `expo`, `expo-blur`, `zustand`, `date-fns`, `react-native-maps`.
+
+**Build and Bundling:**
+- `@babel/core` (v7.25.2) with `babel-plugin-module-resolver`.
+
+## Getting Started
+
+Follow the steps below to set up and run the project locally.
+
+### Prerequisites
+
+- Node.js (v16 or later)
+- npm (Package Manager)
+- Expo CLI (`npm install -g expo-cli`)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd <repository-folder>
+   ```
+
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. Start the Expo development server:
    ```bash
-    npx expo start
+   npx expo start --dev-client
    ```
 
-In the output, you'll find options to open the app in a
+### Running on a Device/Emulator
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **For iOS:** Open the QR code in the Expo Go app (need a Mac and Xcode for iOS simulator).
+- **For Android:** Scan the QR code using the Expo Go app or use an Android emulator.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Testing
 
-## Get a fresh project
-
-When you're ready, run:
-
+Run the test suite with Jest:
 ```bash
-npm run reset-project
+npm test
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Folder Structure
 
-## Learn more
+```plaintext
+├── assets/                 # Asset files (images, fonts, etc.)
+├── components/             # Reusable React components
+├── store/                  # Global state management setup 
+├── utils/                  # Utility functions and helpers
+├── hooks/                  # Custom React hooks
+├── app                     # Main entry point of the app
+└── package.json            # NPM package metadata
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Available Scripts
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+In the project directory, you can run:
 
-## Join the community
+- `npm start`: Run the Expo development server.
+- `npm run android`: Run the application on an Android emulator or physical device.
+- `npm run ios`: Run the application on an iOS simulator or physical device.
+- `npm test`: Run the test suite with Jest.
+- `npm run build`: Build the production-ready version of the app.
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
