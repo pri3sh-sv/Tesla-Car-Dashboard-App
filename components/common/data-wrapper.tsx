@@ -1,13 +1,12 @@
-import {ReactNode} from "react";
 import {View, Text} from "react-native";
 import LottieView from "lottie-react-native";
 
 interface Props {
     isEmpty: boolean
-    children: ReactNode
+    text: String
 }
 
-const DataWrapper = ({isEmpty, children}: Props) => {
+const DataWrapper = ({isEmpty, text}: Props) => {
     if (isEmpty) {
         return (
             <View className={"justify-center gap-6 items-center bg-gray-800 w-full h-full"}>
@@ -16,14 +15,12 @@ const DataWrapper = ({isEmpty, children}: Props) => {
                     autoPlay
                     loop
                     style={{width:240, height:240 }}/>
-                <Text className={"text-3xl text-white font-psemibold"}> No Data Available, Waiting ...
+                <Text className={"text-3xl text-white font-psemibold"}> {text}
 
                 </Text>
             </View>
         )
     }
-
-    return <View>{children}</View>;
 }
 
 export default DataWrapper;
