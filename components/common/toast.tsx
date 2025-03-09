@@ -11,6 +11,25 @@ interface ToastProps {
     type?: "info" | "error" | "success";
 }
 
+/**
+ * ToastComponent provides a reusable toast notification interface.
+ * It utilizes a toast management system to display notifications with customizable properties.
+ *
+ * The component includes the following functionalities:
+ * - Displaying toast notifications with a title, description, and type.
+ * - Types of toasts include "info", "success", "warning", and "error".
+ * - Custom rendering of toast styles based on type.
+ *
+ * Variables:
+ * - `toastId`: Tracks the unique identifier of the current toast notification (number or null).
+ * - `showToast`: A method to display a toast notification. It accepts the following parameters:
+ *   - `title`: The title of the toast.
+ *   - `description`: The descriptive message of the toast.
+ *   - `type` (default is "info"): Determines the styling of the toast based on its type.
+ *
+ * Returns:
+ * - An object containing the `showToast` method, allowing external components to trigger toast notifications.
+ */
 const ToastComponent = () => {
     const toast = useToast();
     const [toastId, setToastId] = useState<number | null>(null);

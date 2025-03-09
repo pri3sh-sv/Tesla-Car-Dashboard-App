@@ -4,6 +4,14 @@ import {Feather} from "@expo/vector-icons";
 import React from "react";
 import ToastComponent from "@/components/common/toast";
 
+/**
+ * Header component displaying a time and temperature, along with a pressable option showing car information.
+ *
+ * @param {Object} props - The props object for the Header component.
+ * @param {string} props.time - The time string to be displayed in the header.
+ *
+ * @returns {JSX.Element} - Returns a React Native component with styled views and interactive elements.
+ */
 const Header = ({time} : {time : string}) => {
     const {showToast} = ToastComponent();
     return (

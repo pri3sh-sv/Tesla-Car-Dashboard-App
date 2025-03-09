@@ -15,6 +15,34 @@ import Icons from "@/constants/icons";
 import { router } from "expo-router";
 import {useAppStore} from "@/store/use-app-store";
 
+/**
+ * App component serves as the main entry point for rendering the dashboard interface.
+ * It manages the state of the application by interacting with WebSocket connections and telemetry data.
+ *
+ * The component retrieves and utilizes the following states:
+ * - `data`: Represents the telemetry data, fetched from a global store.
+ * - `isConnected`: A boolean indicating the WebSocket connection status, fetched from a global store.
+ *
+ * Features:
+ * - Establishes a WebSocket connection on mount and cleans up on unmount.
+ * - Dynamically updates the UI based on connection status and availability of telemetry data.
+ * - Displays a navigation button that redirects to the EV Stations map.
+ *
+ * UI Components:
+ * - `Header`: Displays the formatted current time.
+ * - `GearIndicator`: Shows the current gear of the vehicle.
+ * - `SpeedoMeter`: Displays the current speed and battery percentage of the vehicle.
+ * - `Compass`: Indicates the current direction.
+ * - `DataWrapper`: A fallback component shown during connecting or waiting states.
+ * - `Pressable`: Button for navigating to the EV Stations map.
+ *
+ * State Dependencies:
+ * - `useTelemetryStore`: Provides telemetry `data`.
+ * - `useAppStore`: Provides WebSocket connection status `isConnected`.
+ *
+ * Lifecycle:
+ * - `useEffect`: Manages WebSocket connection lifecycle (connect and disconnect).
+ */
 const App = () => {
     const data = useTelemetryStore((state) => state.data);
     const isConnected = useAppStore((state) => state.wsConnection);

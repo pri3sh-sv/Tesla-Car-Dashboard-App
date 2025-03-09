@@ -6,6 +6,26 @@ interface Props {
     gear: number;
 }
 
+/**
+ * GearIndicator is a functional React component that visually displays the current gear selection of a vehicle.
+ * It renders a list of predefined gears (P, R, N, D) with corresponding colors and styles, indicating the selected gear in a distinct manner.
+ *
+ * The component also provides a blurred background effect and is styled to fit a specific layout with rounded corners and centered content.
+ *
+ * Props:
+ * @param {Object} props - The props object for the GearIndicator component.
+ * @param {number} props.gear - The currently selected gear's value. Matches the value of one element in the predefined `gears` array.
+ *
+ * Gears Configuration:
+ * - P (Parking) with value 0 and color blue.
+ * - R (Reverse) with value -1 and color red.
+ * - N (Neutral) with value 2 and color yellow.
+ * - D (Drive) with value 1 and color green.
+ *
+ * The selected gear is displayed with its respective color and full opacity, while the unselected gears have white text and reduced opacity.
+ *
+ * @returns {React.Element} A styled view containing the gear indicator.
+ */
 const GearIndicator = ({ gear }: Props) => {
     const gears = [
         { label: "P", value: 0, color: "blue" }, // Parking (P) - Blue

@@ -9,6 +9,25 @@ import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import {API_KEY} from "@/config";
 import {router} from "expo-router";
 
+/**
+ * The `MapPage` component renders a map view displaying the user's current location and nearby EV charging stations.
+ *
+ * Functionality:
+ * - Requests the user's permission to access their current location.
+ * - Fetches the user's current geolocation coordinates and sets these as the initial region in the map view.
+ * - Loads a list of nearby EV charging stations within a 10 km radius using the Google Places API.
+ * - Displays markers on the map for the user's location and each EV charging station, with relevant details.
+ *
+ * Features:
+ * - Displays a loading indicator while fetching location data.
+ * - Provides a navigation button to return to the dashboard.
+ * - Dynamically maps the fetched EV station data to markers on the map.
+ *
+ * Notes:
+ * - Requires location permissions to function effectively.
+ * - Uses the Google Maps API to fetch nearby EV station data. Make sure to configure the API key correctly.
+ * - The user's location and fetched EV station data are managed via React state.
+ */
 const MapPage = () => {
     const { location, setLocation } = useLocationStore();
     const [evStations, setEvStations] = useState<{ lat: number; lng: number, name: string, star: string, description: string }[]>([]);
@@ -38,6 +57,16 @@ const MapPage = () => {
         })();
     }, []);
 
+    /**
+     * Fetches a list of nearby EV (Electric Vehicle) charging stations based on the provided latitude and longitude.
+     * Utilizes the Google Places API to retrieve station details within a set radius.
+     * The retrieved data, including location coordinates, name, rating, and description, is processed and stored.
+     * Handles any errors that may occur during the API fetch operation.
+     *
+     * @param {number} lat - The latitude of the user's current location.
+     * @param {number} lng - The longitude of the user's current location.
+     * @returns {Promise<void>} A promise that resolves once the nearby EV stations data has been fetched and stored.
+     */
     const fetchNearbyEVStations = async (lat: number, lng: number) => {
         const apiKey = API_KEY;
         const radius = 10000; //in metres

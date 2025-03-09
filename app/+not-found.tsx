@@ -1,6 +1,11 @@
 import { Link, Stack } from 'expo-router';
 import { StyleSheet, View, Text } from 'react-native';
 
+/**
+ * Represents a screen component displayed when a requested route or page is not found.
+ *
+ * @return {JSX.Element} A JSX element containing the Not Found screen layout with a message and a link to the home screen.
+ */
 export default function NotFoundScreen() {
   return (
     <>

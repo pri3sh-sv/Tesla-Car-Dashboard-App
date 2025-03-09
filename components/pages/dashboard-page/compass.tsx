@@ -7,6 +7,15 @@ interface Props {
     direction: string;
 }
 
+/**
+ * A functional component that renders a compass indicator with directional gears.
+ * The compass visually represents the current direction by highlighting the relevant label.
+ *
+ * @param {Object} Props - The props object for the component.
+ * @param {string} Props.direction - The current direction to be displayed. Accepted values are "N", "S", "E", "W".
+ *
+ * @returns {JSX.Element} A styled view component representing the compass structure with directional indicators.
+ */
 const CompassIndicator = ({ direction }: Props) => {
     const gears = [
         { label: "N", value: "N", color: "black" },

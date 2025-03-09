@@ -24,6 +24,26 @@ const getBatteryColor = ( battery: number ) => {
     }
 };
 
+/**
+ * A functional component that displays a dynamic speedometer and battery status information.
+ *
+ * @param {Object} Props - The props for the SpeedoMeter component.
+ * @param {number} Props.speed - The current speed of the vehicle to be displayed in KM/HR.
+ * @param {number} Props.battery - The current battery percentage of the vehicle.
+ *
+ * @description
+ * This component renders a speedometer with smooth animations based on the change in speed.
+ * It also displays the battery percentage and the calculated range of the vehicle based on
+ * the remaining battery. Smooth animations are implemented using `useSharedValue`,
+ * `useAnimatedStyle`, and `withSpring` for visual effects when the speed changes.
+ * It interpolates values to determine opacity and vertical translation for the animated speed.
+ *
+ * The battery percentage is displayed along with an estimated driving range calculated dynamically.
+ * It uses a simple battery range calculation function for this purpose. The battery icon changes
+ * color dynamically to reflect the battery status visually.
+ *
+ * @returns {JSX.Element} The rendered SpeedoMeter component.
+ */
 const SpeedoMeter = ({ speed, battery }: Props) => {
     const speedAnimation = useSharedValue(0);
 
